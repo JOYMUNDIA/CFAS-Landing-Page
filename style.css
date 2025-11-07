@@ -398,8 +398,8 @@ header nav ul li a:hover {
     color: #f26a21;
 }
 
-/* Features */
-.feature-grid, .service-grid, .team-grid {
+/* service */
+.service-grid, .team-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -408,7 +408,7 @@ header nav ul li a:hover {
     margin-bottom: 4rem;
 }
 
-.feature-card, .service-card, .team-member {
+.service-card, .team-member {
     background: #f8fafc;
     padding: 2rem;
     border-radius: 10px;
@@ -416,29 +416,95 @@ header nav ul li a:hover {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.feature-card:hover, .service-card:hover, .team-member:hover {
+.service-card:hover, .team-member:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.feature-card h3, .service-card h3, .team-member h3 {
+.service-card h3, .team-member h3 {
     margin-bottom: 1rem;
     color: #f26a21;
 }
 
 /* About Us Section */
-.about-us-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  width: 100%;
+.about-us-container {
+    display: flex;
+    flex-direction: row; /* text on left, image on right for large screens */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    gap: 2rem;
 }
 
-.about-us-paragraph{
-  font-size: 1.4rem;
+.about-us-text {
+    flex: 1 1 50%;
+    min-width: 300px;
 }
+
+.about-us-paragraph {
+    font-size: 1.4rem;
+}
+
+.about-us-image {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 280px;
+}
+
+.img-wrap {
+    position: relative;
+    padding: 30px;
+    max-width: 360px;
+    width: 100%;
+}
+
+.img-wrap::after {
+    content: '';
+    border-radius: 999px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(from 30deg, #acacacff, #f26a21 46%, transparent 46%);
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #fff calc(100% - 5px + 1px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #fff calc(100% - 5px + 1px));
+}
+
+.img-wrap img {
+    border-radius: 999px;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 360px;
+}
+
+/* ✅ Responsive layout: stack image above text on smaller screens */
+@media (max-width: 768px) {
+    .about-us-container {
+        flex-direction: column; /* image on top, text below */
+        text-align: center;
+    }
+
+    .about-us-text {
+        order: 2; /* text below image */
+    }
+
+    .about-us-image {
+        order: 1; /* image on top */
+    }
+
+    .about-us-paragraph {
+        font-size: 1.2rem;
+    }
+}
+
 
 /* Team */
 /* Featured Products */
