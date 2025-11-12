@@ -278,6 +278,7 @@ header nav ul li a:hover {
   font-size: 250%;
   font-family: 'Bebas Neue', sans-serif;
   padding: 0 1.2rem;
+  left: 2rem;
 }
 
 .Big-text-paragraph{
@@ -287,6 +288,7 @@ header nav ul li a:hover {
   display: inline-flex;
   flex-wrap: wrap;
   top: -2rem;
+  left: 2rem;
 }
 
 .title-slide .right p{
@@ -296,6 +298,8 @@ header nav ul li a:hover {
 
 .hero-cta{
   padding: 0 1.2rem;
+  position: relative;
+  left: 2rem;
 }
 
 .cta-btn, .btn {
