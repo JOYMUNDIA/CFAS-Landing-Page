@@ -330,6 +330,44 @@ header nav ul li a:hover {
   opacity: 0.5;
 }
 
+.social-buttons {
+  position: absolute;
+  bottom: 0;          /* stick to the bottom of .right */
+  left: 0;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 20px 0;    /* optional spacing from bottom */
+}
+
+.social-buttons li {
+  list-style: none;
+}
+
+.social-buttons li a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  background: linear-gradient(0deg, #ddd, #fff);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+  transition: 0.5s;
+}
+
+.social-buttons li a .fab {
+  font-size: 20px;
+  color: #262626;
+  transition: 0.5s;
+}
+
+/* Hover colors */
+.social-buttons li:nth-child(1) a:hover .fab { color: #3b5998; } /* Facebook */
+.social-buttons li:nth-child(2) a:hover .fab { color: #000000; } /* TikTok */
+.social-buttons li:nth-child(3) a:hover .fab { color: #0077b5; } /* LinkedIn */
+
 @media (max-width: 768px) {
   .title-slide{
     flex-direction: column;
